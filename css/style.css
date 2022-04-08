@@ -1,0 +1,31 @@
+*{
+    color: white;
+    font-family: 'Dosis', sans-serif;
+}
+body{
+    background-image: url("https://wallpaperaccess.com/full/2065697.jpg");
+}
+.nav-item{
+    font-size: 24px;
+}
+img{
+    background: #203239;
+    box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.1);
+    border-radius: 18px;
+    padding: 20px 40px;
+    margin-right: 15px;
+    margin-left: 15px;
+}
+img:hover{
+    background: #2f4852;
+    box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+
+}
+    
+#page-content {
+    flex: 1 0 auto;
+}
+.log-container{
+    height: calc(100vh - 3px); 
+}
