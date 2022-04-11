@@ -1,3 +1,10 @@
+
+<?php
+    session_start();
+    if (isset($_SESSION['role']))
+        echo "<script>top.window.location = 'index.php'</script>";
+?>
+
 <!doctype html>
 <html lang="en">
 
@@ -48,24 +55,25 @@
     <div class="container log-container">
         <div class="trending-home text-center" style="background-color: #353836; padding:5%">
             <h1 style="color:#E0DDAA">Login</h1>
-            <br><hr> <br>
+            <br>
+            <hr> <br>
             <?php
-                if(isset($_GET["error"])){
-                    echo "<div class='alert alert-danger' role='alert'>
-                            ".$_GET["error"]."</div>";
-                }
+            if (isset($_GET["error"])) {
+                echo "<div class='alert alert-danger' role='alert'>
+                            " . $_GET["error"] . "</div>";
+            }
             ?>
             <form action="validate_user.php" method="post">
                 <div class="mb-3">
                     <label class="form-label">Username :</label>
-                    <input type="text" style="color: black;" name="loguser" >
-                
+                    <input type="text" style="color: black;" name="loguser">
+
                 </div>
                 <div class="mb-3">
                     <label class="form-label">Password :</label>
                     <input type="password" style="color: black;" name="logpass">
                 </div>
-                
+
                 <button type="submit" name="submit" class="btn btn-dark">Login</button>
             </form>
             <hr>

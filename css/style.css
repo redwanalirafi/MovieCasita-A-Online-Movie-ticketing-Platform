@@ -29,3 +29,10 @@ img:hover{
 .log-container{
     height: calc(100vh - 3px); 
 }
+.image-resize{
+    
+    height: 500px;
+    width: 95%;
+    object-fit: cover;
+    object-position: center center;
+}

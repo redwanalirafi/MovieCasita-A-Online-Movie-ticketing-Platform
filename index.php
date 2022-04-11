@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!doctype html>
 <html lang="en">
 
@@ -32,7 +35,11 @@
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="login.php">Login</a>
+                        <?php
+                        if (!isset($_SESSION['role']))
+                            echo "<a class='nav-link' href='login.php'>Login</a>";
+                        else echo "<a class='nav-link' href='logout.php'>Logout</a>";
+                        ?>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="register.php">Register</a>
@@ -45,22 +52,27 @@
     <div class="container text-center">
         <br>
         <p style="font-size: 48px; color: #EEEDDE; font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif">Movie Casita</p>
-        <p style="font-size: 24px; color: #EEEDDE; font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif"><i>BREATHE. REFRESH. RESTART</i></p>
+        <p style="font-size: 24px; color: #EEEDDE; font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif"><i>
+                <?php
+                if (!isset($_SESSION['role']))
+                    echo "BREATHE. REFRESH. RESTART";
+                else echo "Welcome Back <span style='color:red';> ".$_SESSION['username']."</span>";
+                ?></i></p>
     </div>
 
-    
+
     <div class="container ">
         <div class="trending-home text-center" style="background-color: #353836; padding:5%">
             <h1 style="color:#E0DDAA">Trending Now</h1>
             <div class="row">
                 <div class="col-md-4 movie" style="padding: 8px; ">
-                    <img src="images/poster1.jpg" alt="" height="100%" width="100%" style="vertical-align: top; box-shadow: 5px 10px 25px black; ">
+                    <a style="text-decoration: none;" href=''><img class="image-resize" src="images/poster1.jpg" style="vertical-align: top; box-shadow: 5px 10px 25px black; "> </a>
                 </div>
                 <div class="col-md-4 movie" style="padding: 8px; ">
-                    <img src="images/poster2.jpg" alt="" height="auto" width="100%" style="vertical-align: top; box-shadow: 5px 10px 25px black;">
+                    <a style="text-decoration: none;" href=''><img class="image-resize" src="images/poster2.jpg" style="vertical-align: top; box-shadow: 5px 10px 25px black;"> </a>
                 </div>
                 <div class="col-md-4  movie" style="padding: 8px; ">
-                    <img src="images/poster3.jpg" alt="" height="auto" width="100%" style="vertical-align: top;  box-shadow: 5px 10px 25px black;">
+                    <a style="text-decoration: none;" href=''><img class="image-resize" src="images/poster4.jpg"  style="vertical-align: top;  box-shadow: 5px 10px 25px black;"> </a>
                 </div>
             </div>
         </div>
